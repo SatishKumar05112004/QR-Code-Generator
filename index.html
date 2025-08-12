@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <p class="subtitle">Create QR codes for links, contacts, emails, phone numbers, and files.</p>
+
+        <label for="qrType">Select QR Type:</label>
+        <select id="qrType" onchange="updateForm()">
+            <option value="text">Text / URL</option>
+            <option value="contact">Contact</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone Number</option>
+            <option value="file">File / Image Link</option>
+        </select>
+
+        <!-- Dynamic form -->
+        <div id="formFields"></div>
+
+        <button onclick="generateQR()">Generate QR Code</button>
+
+        <div id="qrcode"></div>
+        <div id="buttons">
+            <a id="downloadBtn" style="display:none;" download="qrcode.png">Download QR Code</a>
+            <button id="shareBtn" style="display:none;" onclick="shareQR()">Share QR Code</button>
+        </div>
+    </div>
+
+    <!-- QRCode.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
